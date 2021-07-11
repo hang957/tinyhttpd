@@ -1,0 +1,5 @@
+tinyhttpd是一个超轻量型Http Server，使用C语言开发，全部代码只有502行(包括注释)，附带一个简单的Client，可以通过阅读这段代码理解一个 Http Server 的本质。
+所用技术：socket网络编程，http请求与响应处理，unix文件操作，管道通信，多线程，多进程
+工作流程：服务器端创建socket监听某一端口的http请求->服务器创建新线程处理请求，主线程继续等待->新线程读取http请求，解析相关字段，处理POST和GET请求，读取文件内容或者执行CGI程序并返回给浏览器->关闭客户端套接字，新线程退出。
+参考源码：http://sourceforge.net/projects/tinyhttpd/
+reference：https://github.com/WenQiangW/TinyHttpd
